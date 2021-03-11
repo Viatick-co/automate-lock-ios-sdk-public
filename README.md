@@ -4,7 +4,7 @@
 ### Installation
 * Download the `AutomateLockSDK.framework` from Github
 * Link the framework `AutomateLockSDK.framework` in your project. `Project target -> Frameworks, Libraries, and Embedded Content -> Embeded & Sign`
-* Make sure `Info.plist` file has `NSBluetoothAlwaysUsageDescription` permission, for example:
+* Make sure `Info.plist` file includes `NSBluetoothAlwaysUsageDescription`, for example:
 ```xml
 <key>NSBluetoothAlwaysUsageDescription</key>
 <string>We need Bluetooth permission to scan and open Bluetooth locks.</string>
