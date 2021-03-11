@@ -3,12 +3,15 @@
 
 ### Installation
 * Download the `AutomateLockSDK.framework` from Github
-* Link the framework `AutomateLockSDK.framework` in your project. `Project target -> Under Embedded Binaries -> '+' Sign`
+* Link the framework `AutomateLockSDK.framework` in your project. `Project target -> Frameworks, Libraries, and Embedded Content -> Embeded & Sign`
 * Make sure `Info.plist` file has `NSBluetoothAlwaysUsageDescription` permission, for example:
 ```xml
 <key>NSBluetoothAlwaysUsageDescription</key>
 <string>We need Bluetooth permission to scan and open Bluetooth locks.</string>
 ```
+* Under `Build Phases > Embeded Frameworks`, click `"+"`, select `"Add Other..."` then navigate to `project root folder > AutomateLockSDK.framework > Frameworks` and select `CryptoSwift.framework`. Change the order of `Embeded Frameworks` to have `CryptoSwift.framework` above `AutomateLockSDK.framework`. Verify that `CryptoSwift.framework` is `Embeded & Sign` under `Frameworks, Libraries, and Embedded Content`
+* For XCode 12.3 onwards:
+- Under `Build Settings > Validate Workspace` change to `Yes`
 
 ### Setup
 
