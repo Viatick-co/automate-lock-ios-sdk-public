@@ -36,9 +36,8 @@ class ViewController: UIViewController {
         // set delegate to be the current ViewController
         automateLockCtrl.delegate = self
 
-        // initiate the SDK with your SDK key and return the status of initiation
-        // you can't use other SDK methods until it has been initiated
-        let initResult = automateLockCtrl.initialize(sdkKey: "[INSERT_YOUR_SDK_KEY_HERE]")
+        // initiate the SDK with your SDK key
+        automateLockCtrl.initialize(sdkKey: "[INSERT_YOUR_SDK_KEY_HERE]")
 
         // Some codes...
     }
@@ -69,6 +68,11 @@ class ViewController: UIViewController {
 
 // implement delegate of AutomateLockSDK here
 extension ViewController: AutomateLockCtrlDelegate {
+    // return whether SDK initiation is successful or failed
+    // you should only connect to the lock after SDK initiation is successful
+    func onInit(status: Bool) {
+      // Some codes...
+    }
     // trigger upon a lock successfully connected or fail
     func onConnect(macAddress: String, status: Bool) {
       // Some codes...
